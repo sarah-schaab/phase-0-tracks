@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Make Your Coffee Drink</title>
+</head>
+<body>
+<form action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Customer Name</label>
+      <input type="text" name="fullname">
+      <label>Phone Number</label>
+      <input type="tel" name="telnum">
+
+      <label>Pick-up time</label>
+      <input type="time" min="06:00" max="22:00" name="Pick-up">
+    </div>
+  </fieldset>
+  <fieldset>
+  <div>
+
+    <label>What type of drink do you want?</label>
+    <select name="starbucks">
+      <option value="iced_coffee">Iced Coffee</option>
+      <option value="Hot_coffee">Hot Coffee</option>
+      <option value="frappuccino">Frappuccino</option>
+    </select>
+    </div>
+    <div>
+    <label>Add customization</label>
+    <textarea name="custom">Customize</textarea>
+  </div>
+</fieldset>
+
+  <button type="submit">Place Order</button>
+</form>
+</body>
+</html>
