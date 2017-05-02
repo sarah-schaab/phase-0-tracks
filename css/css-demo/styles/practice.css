@@ -8,3 +8,7 @@ section#contact-info {
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
+.list {
+  font-size: .8em;
+}
