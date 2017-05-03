@@ -1,0 +1,26 @@
+section#contact-info {
+  font-size: .8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  padding: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.list {
+  font-size: .8em;
+}
+
+/* Pair research:
+Q1. What does the "Cascading" part of Cascading Style Sheets mean? When there is a conflict between two CSS rules that select the same element, how does your browser decide which rule to use?
+A1. Cascading allows you to use more than one style sheet for an HTML site. When there is a conflict your browser will use the more specific rule applied to that id or class.
+Q2. What is a pseudoselector? Write a CSS rule that uses a pseudoselector.
+A2. A pseudoselector is a keyword that is used to define a special state of an element.
+A2. .list :hover { background: gold; }
+Q3. How can you use CSS to select the child element of another element (for instance, a section inside another section, or an li inside a ul but not inside an ol)? Add an example of such a rule in your CSS.
+A3. Start with the parent element and then add a > followed by the child element.
+A3. section > ul > li {
+  font-weight: bold;
+} */
