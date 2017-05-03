@@ -22,6 +22,7 @@ body {
 main {
   display: inline-block; /* allows to set main side-by-side with External-links */
   width: 70%; /* 80% of body = 756px doesn't work, then I set 70% (672px)*/
+
   padding: 4px 4px; /* top, left */
 }
 
@@ -52,3 +53,8 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+/* Allows font size doesnt get too small*/
+@media screen and (max-width: 500px) {
+  #external-links ul {
+    font-size: 10pt;
+  }
