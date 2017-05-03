@@ -35,6 +35,9 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  min-width: 200px; /* keeps lines from getting too short */
+  padding-right: 5px;
+  padding-top: 5px;
 }
 
 /* you're welcome to edit the
@@ -56,5 +59,16 @@ figcaption {
 /* Allows font size doesnt get too small*/
 @media screen and (max-width: 500px) {
   #external-links ul {
-    font-size: 10pt;
+    font-size: 12px;
   }
+
+@media screen and (max-width: 1045px){
+   #external-links ul {
+        font-size: 10px !important;
+    }
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
