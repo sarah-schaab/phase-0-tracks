@@ -61,11 +61,13 @@ figcaption {
   #external-links ul {
     font-size: 12px;
   }
+}
 
 @media screen and (max-width: 1045px){
    #external-links ul {
         font-size: 10px !important;
     }
+}
 
 @media screen and (max-width: 500px) {
   body {
