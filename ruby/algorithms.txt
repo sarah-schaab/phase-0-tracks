@@ -1,0 +1,28 @@
+Release 0: ELEVATOR
+
+-Decide which floor you need to get to.
+-Decide if you going up or down.
+-IF up:
+  -press the button with an up arrow.
+-IF down:
+  -press the button with a down arrow.
+-Enter the Doors of the elevator when they open.
+-Navigate towards the pannel of buttons.
+-Press button with the number corresponding with floor you need to get to.
+-Stay in elevator until it reaches the floor you need to get to.
+If you get stuck:
+  -call for help
+  -take the stairs
+
+
+Release 1: Finding something to watch on TV in the 90's
+-Turn TV on by pressing power button.
+-Start out at channel 02
+-Until brain = satisfied Press "channel up" button on remote.
+-If brain = satisfied:
+  -stay on channel
+-Otherwise
+  -If brain does not = satisfied:
+  -Press "channel up" button on remote.
+
+
