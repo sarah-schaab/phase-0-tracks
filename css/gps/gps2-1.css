@@ -1,9 +1,32 @@
-h1 {
-  font-family: helvetica;
-  color: rgb(29, 129, 97 );
+*{
+  padding: 10px;
+  margin: 10px;
+  color: yellow;
 }
 
-h2{
-font-family: helvetica;
-  color: rgb(99, 209, 97 );
+header{
+  float: left;
+  width: 100%;
+  background-color: lightblue;
+}
+
+.column-1{
+  float: left;
+  width: 40%;
+  background-color: gray;
+  border-style: solid;
+  border-width: 5px;
+  border-color: blue;
+}
+
+.column-2{
+  float: left;
+  width: 40%;
+  background-color: lightgray;
+}
+
+footer{
+  float: left;
+  width: 100%;
+  background-color: darkgray;
 }
