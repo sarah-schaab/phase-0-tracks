@@ -40,37 +40,33 @@ puts "Enter one Allergy at a time, and enter 'done' when finished listing allerg
 allergic_to = gets.chomp
 until (allergic_to == "sunshine" or allergic_to == "done")
     puts "Please enter your allergies."
+    if allergic_to == sunshine
+      puts "Definitely a vampire"
+    break
 end
 end
 
-
-
-
-
-if (2017-age) == year_born && (garlic == true || insurance == true)
+  if (2017-age) == year_born && (garlic == true || insurance == true)
   puts "#{name} is probably not a vampire"
-elsif
+ elsif
   ((2017-age) != year_born) && (garlic == false || insurance == false)
     puts "#{name} is probably a vampire"
-elsif
+ elsif
   ((2017-age) != year_born) && garlic == false && insurance == false
     puts "#{name} is most certainly a vampire"
-elsif
-  name = "Drake Ula" || "Tu Fang"
-  puts "#{name} “Definitely a vampire."
-
-else
+   name == "Drake Ula" || "Tu Fang"
+  puts "#{name} is Definitely a vampire."
+ else
   puts "Results inconclusive."
+  break
 end
 end
+end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
-
-# if (2017 - current_age == year_born) = true &&
-#   (health_insurance == no) = false
-#   puts "#{name} is probably not a vampire"
-# elsif
-#   (2017 - current_age != year_born) &&
-#   (health_insurance == false || garlic == false)
-#   puts "#{name} is probably  a vampire"
-# end
+#I've successfully been able to loop the program to the number of times entered
+#and I've successfully been able to ask about allergies and loop it until it breaks.
+#but
+# I'm having a lot of trouble running the logic section, I can understand which questions to ask but I can't get them to run properly, and I know that it is because I am missing some aspect of the conditions of the if/elsif/else statements. Do you think you could help me
