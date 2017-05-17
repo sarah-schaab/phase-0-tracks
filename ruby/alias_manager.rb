@@ -18,11 +18,14 @@ full_name = gets.chomp.split(' ')
 full_name[0], full_name[1] = full_name[1], full_name[0]
 
 
-#Second Change All of the vowels (a,e,i,o,u) to the next vowel.
-vowels = ['a','e','i','o','u']
 
-full_name.include?(vowels)
-p full_name
+#Second Change All of the vowels (a,e,i,o,u) to the next vowel.
+ vowels = ['a','e','i','o','u']
+p full_name.include?(vowels)
+
+
+
+# new_name = schaab >> scheeb || sarah >> sereh
 
 
  # Third change all of the consonants to the next consonant.
