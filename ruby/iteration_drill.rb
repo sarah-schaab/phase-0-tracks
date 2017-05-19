@@ -10,13 +10,34 @@ zombie_apocalypse_supplies.each do |item|
 end
 #zombie_apocalypse_supplies.each { |x| print x, " * "}
 
+
+
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
+def bubble_sort(array)
+  n = array.length
+  loop do
+    swapped = false
+    (n-1).times do |i|
+      if array[i] > array[i+1]
+        array[i], array[i+1] = array[i+1], array[i]
+        swapped = true
+      end
+    end
+    break if not swapped
+    end
+    array
+    end
+
+p bubble_sort(zombie_apocalypse_supplies)
+
 
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
+
+
 
 # def search_zombie_array (my_array, item)
 
@@ -43,6 +64,16 @@ end
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
+# def keep_five(array)
+#   array.each
+#   array.keep_if { |i| i > 5 }
+#   end
+
+
+
+# p keep_five(zombie_apocalypse_supplies)
+
+
 # ----
 
 # 5. You found another survivor! This means you can combine your supplies.
@@ -50,8 +81,12 @@ end
 # and their supplies below. You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
-# other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
-                            # "solar battery", "flashlight"]
+other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
+                            "solar battery", "flashlight"]
+
+combined_array = zombie_apocalypse_supplies + other_survivor_supplies
+combined_array.uniq!
+p "These are the unique items of your supplies #{combined_array}"
 # ----
 
 # Hash Drills
@@ -107,12 +142,14 @@ end
 
 
 def extinct_checker()
-  extinct_animals.each do |key|
-  extinct_animals.member?(item)
-  if  true
+  extinct_animals.each do |key, value|
+
+  extinct_animals.member?(key)
+
+  if key = true
     puts "The #{item} is extinct"
   else
-      false
+      key = false
       puts "The #{item} is not extinct"
 end
 end
