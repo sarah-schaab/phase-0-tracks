@@ -5,15 +5,20 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
+
+
 zombie_apocalypse_supplies.each do |item|
   print "#{item}", "*"
 end
+
+
 #zombie_apocalypse_supplies.each { |x| print x, " * "}
 
 
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
+
 def bubble_sort(array)
   n = array.length
   loop do
@@ -38,24 +43,16 @@ p bubble_sort(zombie_apocalypse_supplies)
 # For instance: are boots in your list of supplies?
 
 
-
-# def search_zombie_array (my_array, item)
-
-#   # create a nested hash
-#   hash = {}
-#   hash_key = 0 # key
-#     # add a block to iterate the list
-#     my_array.each do |item|
-#     hash[hash_key]= item
-#     hash_key += 1
-#   end
-
-#   hash.key(item)
-# end
-
-
-# #p search_number_array(arr, 1)
-# p search_zombie_array(zombie_apocalypse_supplies, "water jug")
+def array_search(array)
+array.map do |x|
+ if x == true
+  puts "#{x} is not in bag"
+else
+  puts "#{x} is in bag"
+end
+end
+end
+array_search(zombie_apocalypse_supplies)
 
 
 
@@ -64,15 +61,17 @@ p bubble_sort(zombie_apocalypse_supplies)
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
-# def keep_five(array)
-#   array.each
-#   array.keep_if { |i| i > 5 }
-#   end
 
+  def pick_5(array)
+   item_1 = array[0]
+   item_2 = array[1]
+   item_3 = array[2]
+   item_4 = array[3]
+   item_5 = array[4]
+   p "The items you are keeping are: #{item_1}, #{item_2}, #{item_3}, #{item_4}, #{item_5}"
+  end
 
-
-# p keep_five(zombie_apocalypse_supplies)
-
+ pick_5(zombie_apocalypse_supplies)
 
 # ----
 
@@ -84,9 +83,18 @@ p bubble_sort(zombie_apocalypse_supplies)
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 
-combined_array = zombie_apocalypse_supplies + other_survivor_supplies
-combined_array.uniq!
-p "These are the unique items of your supplies #{combined_array}"
+# combined_array = zombie_apocalypse_supplies + other_survivor_supplies
+# combined_array.uniq!
+
+def array_adder(array_1, array_2)
+  array_3 = array_1 + array_2
+  p array_3.uniq!
+end
+
+
+p "These are your new supplies #{array_adder(zombie_apocalypse_supplies, other_survivor_supplies)}"
+
+
 # ----
 
 # Hash Drills
@@ -112,6 +120,7 @@ end
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
+
 extinct_animals.each do  |key, value|
   if value < 2000
     puts "#{key} #{value} "
@@ -124,7 +133,7 @@ end
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
-extinct_animals.each do  |key, value|
+# extinct_animals.each do  |key, value|
 if value > 1
     new_value = value+3
   p "#{key} - #{new_value}"
@@ -141,24 +150,24 @@ end
 # Do not use any special built-in methods.
 
 
-def extinct_checker()
-  extinct_animals.each do |key, value|
+# def extinct_checker()
+#   extinct_animals.each do |key, value|
 
-  extinct_animals.member?(key)
+#   extinct_animals.member?(key)
 
-  if key = true
-    puts "The #{item} is extinct"
-  else
-      key = false
-      puts "The #{item} is not extinct"
-end
-end
-end
+#   if key = true
+#     puts "The #{item} is extinct"
+#   else
+#       key = false
+#       puts "The #{item} is not extinct"
+# end
+# end
+# end
 
-p extinct_checker("Andean Cat")
-p extinct_checker("Dodo")
-p extinct_checker("Saiga Antelope")
-# ----
+# p extinct_checker("Andean Cat")
+# p extinct_checker("Dodo")
+# p extinct_checker("Saiga Antelope")
+# # ----
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
