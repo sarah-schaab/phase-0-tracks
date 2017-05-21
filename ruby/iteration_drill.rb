@@ -43,16 +43,16 @@ p bubble_sort(zombie_apocalypse_supplies)
 # For instance: are boots in your list of supplies?
 
 
-def array_search(array)
-array.map do |x|
- if x == true
-  puts "#{x} is not in bag"
+def array_search(array, index)
+  array.length do |i|
+  if array[i] = true
+    puts "#{item} is in bag"
 else
-  puts "#{x} is in bag"
+  puts "#{item} is not in bag"
 end
 end
 end
-array_search(zombie_apocalypse_supplies)
+p array_search(zombie_apocalypse_supplies, 9)
 
 
 
@@ -112,7 +112,7 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 # extinct_animals.each {|key, value| puts "#{key} - #{value} ", "*" }
-
+p "HASHES #1"
 extinct_animals.each do |key, value|
   puts "#{key}-#{value}", "*"
 end
@@ -120,7 +120,7 @@ end
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
-
+p "HASHES #2"
 extinct_animals.each do  |key, value|
   if value < 2000
     puts "#{key} #{value} "
@@ -133,7 +133,8 @@ end
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
-# extinct_animals.each do  |key, value|
+p "HASHES #3"
+extinct_animals.each do  |key, value|
 if value > 1
     new_value = value+3
   p "#{key} - #{new_value}"
@@ -149,20 +150,32 @@ end
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 
+p "HASHES #4"
 
-# def extinct_checker()
-#   extinct_animals.each do |key, value|
 
-#   extinct_animals.member?(key)
+  def extinct_checker(hash, key)
+    hash = extinct_animals(key, value)
+    if hash.has_key? == true
+      puts "animal is extinct"
+    else
+      puts "animal is not extinct"
+    end
 
-#   if key = true
-#     puts "The #{item} is extinct"
-#   else
-#       key = false
-#       puts "The #{item} is not extinct"
+
+end
+
+# def hash_checker(hash)
+# hash.each do  |key, value|
+# if key == true
+#   p "#{key} is extinct"
+# else
+#   p "#{input} in not extinct"
 # end
 # end
 # end
+
+p extinct_checker("Andean Cat", )
+
 
 # p extinct_checker("Andean Cat")
 # p extinct_checker("Dodo")
