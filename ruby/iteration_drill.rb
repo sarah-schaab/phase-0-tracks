@@ -71,6 +71,13 @@ p "ARRAY 4"
    p "The items you are keeping are: #{item_1}, #{item_2}, #{item_3}, #{item_4}, #{item_5}"
   end
 
+  # def item_picker(array)
+  #   array.map do |index|
+  #     pick_5
+
+
+  #     new_items_array = []
+
  pick_5(zombie_apocalypse_supplies)
 
 # ----
@@ -109,23 +116,32 @@ extinct_animals = {
   "Laysan Crake" => 1923
 }
 
+extinct_animals = {
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "Passenger Pigeon" => 1914,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 # extinct_animals.each {|key, value| puts "#{key} - #{value} ", "*" }
-p "HASHES #1"
-extinct_animals.each do |key, value|
-  puts "#{key}-#{value}", "*"
-end
+# p "HASHES #1"
+# extinct_animals.each do |key, value|
+#   puts "#{key}-#{value}", "*"
+# end
 # ----
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
-p "HASHES #2"
-extinct_animals.each do  |key, value|
-  if value < 2000
-    puts "#{key} #{value} "
-end
-end
+# p "HASHES #2"
+# extinct_animals.each do  |key, value|
+#   if value < 2000
+#     puts "#{key} #{value} "
+# end
+# end
 
 # ----
 
@@ -133,13 +149,13 @@ end
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
-p "HASHES #3"
-extinct_animals.each do  |key, value|
-if value > 1
-    new_value = value+3
-  p "#{key} - #{new_value}"
-end
-end
+# p "HASHES #3"
+# extinct_animals.each do  |key, value|
+# if value > 1
+#     new_value = value+3
+#   p "#{key} - #{new_value}"
+# end
+# end
 
 # ----
 
@@ -151,33 +167,49 @@ end
 # Do not use any special built-in methods.
 
 p "HASHES #4"
+# def extinct_checker(animal)
+#  extinct_animals.each do |key, value|
+#   if key == animal.to_sym
+#     puts "The #{animal} is extinct"
+#   else
+#     puts "The #{animal} is not extinct"
+#   end
+# end
+# end
+#  animal = "Dodo"
 
-
-#   def extinct_checker(animal)
-#     extinct_animals.each
-#     if animal == true
-#       puts "animal is extinct"
+# extinct_animals.each do |k, v|
+#     if extinct_animals.include? animal.to_sym
+#         puts "#{k}, #{v} Is on the list of extinct animals"
 #     else
-#       puts "animal is not extinct"
-#     end
+#         puts "The #{animal} is not extinct"
+#    end
+# end
+animal = "Andean Cat"
 
 
+extinct_animals.map do  |key, value|
+if animal == key
+  p "#{key} is extinct "
+else
+  puts "#{animal} is not extinct"
+end
+end
+
+# def hash_search(hash, key)
+#   hash.map do |i|
+#   if hash.has_key? == true
+#     puts "#{item} is in bag"
+# else
+#   puts "#{item} is not in bag"
+# end
+# end
 # end
 
-# # def hash_checker(hash)
-# # hash.each do  |key, value|
-# # if key == true
-# #   p "#{key} is extinct"
-# # else
-# #   p "#{input} in not extinct"
-# # end
-# # end
-# # end
-
-# p extinct_checker("Andean Cat", )
 
 
-# # p extinct_checker("Andean Cat")
+
+
 # # p extinct_checker("Dodo")
 # # p extinct_checker("Saiga Antelope")
 # # # ----
@@ -191,8 +223,8 @@ p "HASHES #4"
 # second return "Passenger Pigeon" and date as an array
 p "HASHES 5"
 
-extinct_animals.reject {|k,v| k = "Passenger Pigeon"}
+# passenger_pigeon_array[] = extinct_animals.shift()
+extinct_animals.rassoc(1914)
 
-p pigeon_array
-
-
+# trying to use shift but cannot figure out exactly how to implement it.
+# using .rassoc(value) instead
