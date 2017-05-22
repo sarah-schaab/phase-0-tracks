@@ -6,7 +6,7 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 
-
+p "ARRAY 1"
 zombie_apocalypse_supplies.each do |item|
   print "#{item}", "*"
 end
@@ -18,7 +18,7 @@ end
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
-
+p "ARRAY 2"
 def bubble_sort(array)
   n = array.length
   loop do
@@ -42,7 +42,7 @@ p bubble_sort(zombie_apocalypse_supplies)
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
 
-
+p "ARRAY 3"
 def array_search(array, index)
   array.length do |i|
   if array[i] = true
@@ -61,7 +61,7 @@ p array_search(zombie_apocalypse_supplies, 9)
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
-
+p "ARRAY 4"
   def pick_5(array)
    item_1 = array[0]
    item_2 = array[1]
@@ -85,7 +85,7 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
 
 # combined_array = zombie_apocalypse_supplies + other_survivor_supplies
 # combined_array.uniq!
-
+p "ARRAY 5"
 def array_adder(array_1, array_2)
   array_3 = array_1 + array_2
   p array_3.uniq!
@@ -153,37 +153,46 @@ end
 p "HASHES #4"
 
 
-  def extinct_checker(hash, key)
-    hash = extinct_animals(key, value)
-    if hash.has_key? == true
-      puts "animal is extinct"
-    else
-      puts "animal is not extinct"
-    end
+#   def extinct_checker(animal)
+#     extinct_animals.each
+#     if animal == true
+#       puts "animal is extinct"
+#     else
+#       puts "animal is not extinct"
+#     end
 
 
-end
-
-# def hash_checker(hash)
-# hash.each do  |key, value|
-# if key == true
-#   p "#{key} is extinct"
-# else
-#   p "#{input} in not extinct"
-# end
-# end
 # end
 
-p extinct_checker("Andean Cat", )
+# # def hash_checker(hash)
+# # hash.each do  |key, value|
+# # if key == true
+# #   p "#{key} is extinct"
+# # else
+# #   p "#{input} in not extinct"
+# # end
+# # end
+# # end
+
+# p extinct_checker("Andean Cat", )
 
 
-# p extinct_checker("Andean Cat")
-# p extinct_checker("Dodo")
-# p extinct_checker("Saiga Antelope")
-# # ----
+# # p extinct_checker("Andean Cat")
+# # p extinct_checker("Dodo")
+# # p extinct_checker("Saiga Antelope")
+# # # ----
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+# first remove "Passenger Pigeon"
+# second return "Passenger Pigeon" and date as an array
+p "HASHES 5"
+
+extinct_animals.reject {|k,v| k = "Passenger Pigeon"}
+
+p pigeon_array
+
+
