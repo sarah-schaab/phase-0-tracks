@@ -32,6 +32,7 @@ loop do
 
 puts "what is your full name?"
 name_vowel = gets.chomp
+until name_vowel == "quit"
 
 def next_vowel(name_vowel)
   name_vowel.chars.map do |char|
@@ -61,7 +62,13 @@ alias_name = next_consonant(new_name).split(' ')
 alias_name[0], alias_name[1] = alias_name[1], alias_name[0]
 p "Your new alias is"
 p alias_name
-until name_vowel == "quit"
+
+
 break
 end
-  end
+end
+array_of_alias.push(alias_name)
+array_of_alias[]
+
+
+
