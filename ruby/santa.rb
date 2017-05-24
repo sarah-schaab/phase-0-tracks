@@ -1,11 +1,19 @@
-class Santa #this should be capitalized first letter
+class Santa
+  attr_reader :name, :gender, :ethnicity, :age, :reindeer_ranking
+  attr_accessor :name, :gender, :ethnicity, :age, :reindeer_ranking
+
+
      def initialize(name, gender, ethnicity)
         @name = name
-        @gender = gender
-        @ethnicity = ethnicity
-        @age = 0
+        @gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+        @ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+        @age = rand(0..140)
         @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     end
+
+    # def gender_selector(gender)
+    #   @gender = @gender.sample
+    # end
 
 
     def speak()
@@ -35,39 +43,39 @@ class Santa #this should be capitalized first letter
 
 
 #____GETTER METHODS____#
-    def name
-      @name
-    end
+#     def name
+#       @name
+#     end
 
-    def gender
-      @gender
-    end
+#     def gender
+#       @gender
+#     end
 
-    def ethnicity
-      @ethnicity
-    end
+#     def ethnicity
+#       @ethnicity
+#     end
 
-    def age
-      @age
-    end
+#     def age
+#       @age
+#     end
 
-    def reindeer_ranking
-      @reindeer_ranking
-    end
+#     def reindeer_ranking
+#       @reindeer_ranking
+#     end
 
-#____SETTER METHODS____#
+# #____SETTER METHODS____#
 
-    def name=(new_name)
-      @name = new_name
-    end
+#     def name=(new_name)
+#       @name = new_name
+#     end
 
-    def gender=(new_gender)
-      @gender = new_gender
-    end
+#     def gender=(new_gender)
+#       @gender = new_gender
+#     end
 
-    def age=(new_age)
-      @age = new_age
-    end
+#     def age=(new_age)
+#       @age = new_age
+#     end
 
 
 end
@@ -76,7 +84,9 @@ end
 
 #____DRIVER CODE____#
 
-kris_kringle = Santa.new("Kris Kringle", "Male", "Dominican")
+
+
+kris_kringle = Santa.new("Kris Kringle", @gender , "Dominican")
 
 p kris_kringle
 
@@ -84,11 +94,9 @@ p kris_kringle.speak()
 
 p kris_kringle.eat_milk_and_cookies("snicker doodle")
 
- kris_kringle.about
 
  kris_kringle.gender = "female"
 
  kris_kringle.celebrate_birthday(@age)
- p kris_kringle.age
 
  kris_kringle.get_mad_at
