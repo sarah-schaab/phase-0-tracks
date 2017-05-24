@@ -82,23 +82,38 @@ class Santa
 
 end
 
+#____ARRAYS & HASHES____#
+gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+
+ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+santa_array = []
+p "How many santas would you like to enter?"
+n = gets.chomp.to_i
+
+
+#_____PROGRAM CODE (release 4)____#
+
+n.times do
+    puts "Enter the name for a new Santa"
+    santa_array << name = gets.chomp
+    #{santa_array << name = Santa.new(name, gender.sample, ethnicity.sample)}
+end
+p santa_array
+
+santa_array.each do |name|
+  name = Santa.new(name, gender.sample, ethnicity.sample)
+  name.about
+end
+
+
+
 
 
 #____DRIVER CODE____#
-gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-
-kris_kringle = Santa.new("Kris Kringle", gender.sample  , ethnicity.sample)
-
-p kris_kringle
-
-p kris_kringle.speak()
-
-p kris_kringle.eat_milk_and_cookies("snicker doodle")
-
-
- kris_kringle.gender = "female"
-
- kris_kringle.celebrate_birthday(@age)
-
- kris_kringle.get_mad_at
+#kris_kringle = Santa.new(name, gender.sample  , ethnicity.sample)
+#p kris_kringle.about
+# p kris_kringle.speak()
+# p kris_kringle.eat_milk_and_cookies("snicker doodle")
+# kris_kringle.celebrate_birthday(@age)
+# kris_kringle.get_mad_at
