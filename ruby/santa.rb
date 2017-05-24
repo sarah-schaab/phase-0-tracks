@@ -3,10 +3,12 @@ class Santa
   attr_accessor :name, :gender, :ethnicity, :age, :reindeer_ranking
 
 
+
+
      def initialize(name, gender, ethnicity)
         @name = name
-        @gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-        @ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+        @gender = gender
+        @ethnicity = ethnicity
         @age = rand(0..140)
         @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     end
@@ -83,10 +85,10 @@ end
 
 
 #____DRIVER CODE____#
+gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-
-
-kris_kringle = Santa.new("Kris Kringle", @gender , "Dominican")
+kris_kringle = Santa.new("Kris Kringle", gender.sample  , ethnicity.sample)
 
 p kris_kringle
 
