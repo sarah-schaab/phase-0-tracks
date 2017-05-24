@@ -84,23 +84,20 @@ end
 
 #____ARRAYS & HASHES____#
 gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-
 ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-
 santa_array = []
-p "How many santas would you like to enter?"
-n = gets.chomp.to_i
+
 
 
 #_____PROGRAM CODE (release 4)____#
+p "How many santas would you like to enter?"
+number_of_santas = gets.chomp.to_i
 
-n.times do
+number_of_santas.times do
     puts "Enter the name for a new Santa"
     santa_array << name = gets.chomp
-    #{santa_array << name = Santa.new(name, gender.sample, ethnicity.sample)}
 end
-p santa_array
-
+p "You've entered #{number_of_santas} Santas #{santa_array}"
 santa_array.each do |name|
   name = Santa.new(name, gender.sample, ethnicity.sample)
   name.about
