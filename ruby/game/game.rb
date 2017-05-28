@@ -26,7 +26,7 @@ class WordGame
  attr_accessor :word
 
   def initialize(word) #to initialize game
-    @word = word.downcase.split(' ')
+    @word = word
     @guess_limit = 0
     @guess_count = 0
     @game_over = false
@@ -41,7 +41,7 @@ class WordGame
 
 
   def guess_limit #number of guesses user gets based on word length
-    @guess_limit = word.length + 2
+    @guess_limit = @word.length * 2
   end
 
 #method to put order to guesses
@@ -51,7 +51,7 @@ class WordGame
    #if the letter is not in the word
    #the guess_
 
-  #def
+  def
 
   end
 
@@ -84,22 +84,20 @@ word = "filler"
 game = WordGame.new(word)
 
 
-p "Player 2, you have #{game.guess_limit_def} guesses to go. "
+p "Player 2, you have #{game.guess_limit} guesses to go. "
 
 
 
 game.guess_limit
 p game
+p game.guess_limit
 
 
 
 =begin
 while game_over == false
- if the guess limit is counted down to zero
-  -put "you ran out of guesses
-  -run game_over == true
 
-  elsif
+  if
     puts "guess a letter" (must be lowercase so .downcase)
     letter = gets.chomp
     if array of guesses includes letter (if array_of_guesses.include(letter))
@@ -108,6 +106,14 @@ while game_over == false
     P "you guessed incorrectly"
     if array_of_word_letters includes letter (if array_of_word_letters.include?(letter))
     p "you guessed correctly"
+
+    if
+  if the guess limit is counted down to zero and word not exposed
+  -put "you ran out of guesses
+  -run game_over == true
+
+  if the guess limit is counted down to zero and the word is exposed
+    -run game_over == true
 
 
 elsif
