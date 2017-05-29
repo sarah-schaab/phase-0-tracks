@@ -1,3 +1,7 @@
+#____WORD GUESSING GAME____#
+
+
+#__CLASS__#
 class Game
   attr_reader :secret_word, :guess_limit
   attr_writer :secret_word, :guess_limit
@@ -5,7 +9,7 @@ class Game
 
 
   def initialize(secret_word)
-    @secret_word = secret_word
+    @secret_word = secret_word.downcase.split('')
     @number_of_guesses = 0
     @guess_limit = guess_limit
     @previous_guesses = []
@@ -48,16 +52,28 @@ end
 guessed_letters = []
 solved_letters = []
 unguessed_letter = "_"
+hidden_word_array = []
+new_array = []
+
+
+# #initialize game with word entered
 puts "Player 1, enter a secret word for Player 2 to guess"
 secret_word = gets.chomp
-# #initialize game with word entered
 game = Game.new(secret_word)
 game.guess_limit
 
 
 
-hidden_word = secret_word.length
-hidden_word.times {solved_letters << unguessed_letter}
+# hidden_word = secret_word.length
+# hidden_word.times {solved_letters << unguessed_letter}
+
+# trial = "example"
+# puts "Type a letter: "
+# guess = gets.chomp
+# puts trial.tr("^#{guess}", "*")
+
+hidden_word_array.map { |a| a - "*" }
+p hidden_word_array
 
 
 
@@ -72,23 +88,27 @@ while guesses > 0
   if game.word.include?(guessed_letter)
         puts "you guessed a letter correctly!"
         puts "you have #{guesses} chances left"
+        p secret_word.tr!("^#{guessed_letter}", "*")
+        #p hidden_word_array
 
   elsif
       game.word.include?(guessed_letter) == false
       puts "This letter is NOT in the word!"
       puts "you have #{guesses} chances left"
-      break
+
 
   elsif game.previous_guesses.include?(guessed_letter)
     puts "You already guessed that!. Try again."
     guesses += 1
     puts "you have #{guesses} chances left"
-
-  elsif (game.word.include?(guessed_letter) && game.previous_guesses.include?(guessed_letter))
-    puts "You already guessed that!. Try again."
-    guesses += 1
-    puts "you have #{guesses} chances left"
+    p "Letters you already guessed #{guessed_letters}"
 end
+#new_array << hidden_word_array.map! { |a| a.delete "*" }
+#p hidden_word_array
+
+
+
+
 
 
 
