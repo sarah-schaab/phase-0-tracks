@@ -8,6 +8,7 @@ class Game
     @secret_word = secret_word
     @number_of_guesses = 0
     @guess_limit = guess_limit
+    @previous_guesses = []
   end
 
   def word
@@ -27,7 +28,13 @@ class Game
       end
       replaced_letter
     end
+  def previous_guesses
+    @previous_guesses
+  end
 
+  def add_to_previous_guesses(letter)
+    @previous_guesses << letter
+  end
 
   def remove_from_guess_limit
     @guess_limit = guess_limit - 1
@@ -59,23 +66,37 @@ puts "Player 2, you have #{(secret_word.length + 4)} chances to win the game."
 while guesses > 0
   puts "Please guess a letter."
   guessed_letter = gets.chomp
-  guessed_letters << guessed_letter
+  game.add_to_previous_guesses(guessed_letter)
   guesses = guesses - 1
 
   if game.word.include?(guessed_letter)
         puts "you guessed a letter correctly!"
         puts "you have #{guesses} chances left"
+
   elsif
       game.word.include?(guessed_letter) == false
       puts "This letter is NOT in the word!"
       puts "you have #{guesses} chances left"
+      break
 
-  elsif guessed_letters.include?(guessed_letter)
+  elsif game.previous_guesses.include?(guessed_letter)
+    puts "You already guessed that!. Try again."
+    guesses += 1
+    puts "you have #{guesses} chances left"
+
+  elsif (game.word.include?(guessed_letter) && game.previous_guesses.include?(guessed_letter))
     puts "You already guessed that!. Try again."
     guesses += 1
     puts "you have #{guesses} chances left"
 end
+
+
+
+
+
+
 end
+
 
 
 
