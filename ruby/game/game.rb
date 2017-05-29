@@ -23,13 +23,12 @@
 # #create a class for the game
 class Game
  attr_reader :word, :guess_limit, :is_over
- attr_writer :guess_limit
  attr_accessor :word, :guess_limit, :is_over
 
 # #initializes game
   def initialize(word) #to initialize game
     @word = word.downcase.split('')
-    @guess_limit = 0
+    @guess_limit = guess_limit
     @guess_count = 0
     @is_over = false
     @previous_guesses = []
@@ -44,12 +43,22 @@ class Game
 #   end
 
 # #number of guesses user gets based on word length
-  def guess_limit
-    @guess_limit = @word.length * 2
+  def word(word)
+    @word
   end
 
-  def remove_from_guess_limit
-    @guess_limit -= 1
+  def guess_limit
+    guess_limit = @word.length * 2
+    @guess_limit = guess_limit
+  end
+
+  def guess_limit_subtract
+    @guess_limit = guess_limit - 1
+    @guess_limit
+    end
+
+ def previous_guess(letter)
+    @previous_guesses << letter
   end
 
 
@@ -69,7 +78,7 @@ class Game
 # def show_progress(word,array)
 #   blank_string = ''
 #   @word.chars.each do |letter|
-#     if array_of_letters.include?(letter)
+#     if @words.include?(letter)
 #       blank_string << letter
 #     else
 #       blank_string << '_'
@@ -94,26 +103,61 @@ game = Game.new(word)
  p game
 
 #loop while game is not over
-while !game.is_over
-puts "Player 2, you have #{game.guess_limit} chances left. Guess a letter"
+
+puts "Player 2, you have #{game.guess_limit} chances. lets start the game!"
+
+previous_guesses = []
+
+
+
+
+#!!!!!!______ATTEMPT 2______!!!!!!#
+until @count_limit == 0
+  if game.guess_limit == 0
+      puts "Game over, you ran out of guesses!"
+      break
+
+  else
+    puts "Guess a letter"
+    letter = gets.chomp.downcase
+    game.previous_guess(letter)
+      if previous_guesses.include?(letter)
+        print "You already guessed that letter \n"
+      else
+        game.guess(letter)
+        game.guess_limit -= 1
+        print "You have #{game.guess_limit} guesses left! \n"
+      end
+      end
+
+end
+
+
+
 letter = gets.chomp
 
-  if word.include?(letter)
-    puts "This letter is in the word!"
-    game.guess_limit -=1
-    guess_limit
-  elsif
-    word.include?(letter) == false
-    puts "That letter is not in the word!"
-    @guesslimit = game.guess_limit
-    @guess_limit
-  elsif
-    word.include?(letter) == false && previous_guesses.include?(letter)
-    puts "You already guessed that letter."
-    game.guess_limit
-    @guess_limit
-  end
-end
+
+
+
+#!!!!!!______ATTEMPT 1______!!!!!!#
+# if word.include?(letter)
+#     puts "This letter is in the word!"
+#    @guess_limit = (game.guess_limit - 1)
+#     @guess_limit
+
+#   elsif
+#     word.include?(letter) == false
+#     puts "That letter is not in the word!"
+#     @guess_limit = (game.guess_limit - 1)
+#     @guess_limit
+#   elsif
+#     word.include?(letter) == false && previous_guesses.include?(letter)
+#     puts "You already guessed that letter."
+#     @guess_limit = (game.guess_limit)
+#     @guess_limit
+#   end
+
+
 
 
 
