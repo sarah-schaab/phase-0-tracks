@@ -23,15 +23,6 @@ class Game
     @guess_limit = secret_word.length * 2
   end
 
-
-   def hide_word  #hiding word - tried GSUB, SUB, now replacing letters in word
-      hidden_word = @secret_word
-      replaced_letter = ""
-      @secret_word.length.times do |hidden_word|
-        replaced_letter += "_"
-      end
-      replaced_letter
-    end
   def previous_guesses
     @previous_guesses
   end
@@ -40,8 +31,24 @@ class Game
     @previous_guesses << letter
   end
 
+  def check_previous_guesses(letter)
+    @previous_guesses.include?(letter)
+  end
+
   def remove_from_guess_limit
     @guess_limit = guess_limit - 1
+  end
+
+  def progress(secret_word, previous_guesses)
+    progress_string = ''
+    @secret_word.each do |letter|
+      if @previous_guesses.include?(letter)
+        progress_string << letter
+      else
+        progress_string << '_'
+      end
+    end
+    progress_string
   end
 
 
@@ -52,7 +59,7 @@ end
 guessed_letters = []
 solved_letters = []
 unguessed_letter = "_"
-hidden_word_array = []
+hidden_word_array =
 new_array = []
 
 
@@ -72,8 +79,8 @@ game.guess_limit
 # guess = gets.chomp
 # puts trial.tr("^#{guess}", "*")
 
-hidden_word_array.map { |a| a - "*" }
-p hidden_word_array
+# hidden_word_array.map { |a| a - "*" }
+# p hidden_word_array
 
 
 
@@ -82,39 +89,51 @@ puts "Player 2, you have #{(secret_word.length + 4)} chances to win the game."
 while guesses > 0
   puts "Please guess a letter."
   guessed_letter = gets.chomp
-  game.add_to_previous_guesses(guessed_letter)
   guesses = guesses - 1
+  game.previous_guesses
 
-  if game.word.include?(guessed_letter)
+  if
+    game.previous_guesses.include?(guessed_letter) == true
+    puts "You already guessed #{guessed_letter}"
+    guesses += 1
+
+
+  elsif game.word.include?(guessed_letter)
+      game.add_to_previous_guesses(guessed_letter)
         puts "you guessed a letter correctly!"
         puts "you have #{guesses} chances left"
-        p secret_word.tr!("^#{guessed_letter}", "*")
+         #secret_word.tr!("^#{guessed_letter}", "*")
         #trying to figure out how to print the progress using the above information
-  elsif
-      game.word.include?(guessed_letter) == false
-      puts "This letter is NOT in the word!"
-      puts "you have #{guesses} chances left"
+        p game.progress(secret_word, @previous_guesses)
 
-
-  elsif game.previous_guesses.include?(guessed_letter)
-    puts "You already guessed that!. Try again."
-    guesses += 1
+        if game.progress(secret_word, @previous_guesses) == secret_word
+          break
+        end
+  else
+    game.word.include?(guessed_letter) == false
+    game.add_to_previous_guesses(guessed_letter)
+    puts "This letter is NOT in the word!"
     puts "you have #{guesses} chances left"
-    p "Letters you already guessed #{guessed_letters}"
-end
-#new_array << hidden_word_array.map! { |a| a.delete "*" }
-#p hidden_word_array
-
-
-
-
-
-
-
-
-
+    p game.progress(secret_word, @previous_guesses)
+  end
 
 end
+
+
+if game.progress(secret_word, @previous_guesses) == secret_word
+  puts "YOU WON!"
+elsif
+  game.progress(secret_word, @previous_guesses) != secret_word
+  puts "YOU LOST THE GAME!"
+
+end
+
+
+
+
+
+
+
 
 
 
