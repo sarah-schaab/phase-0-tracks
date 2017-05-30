@@ -89,8 +89,7 @@ while guesses > 0
         puts "you guessed a letter correctly!"
         puts "you have #{guesses} chances left"
         p secret_word.tr!("^#{guessed_letter}", "*")
-        #p hidden_word_array
-
+        #trying to figure out how to print the progress using the above information
   elsif
       game.word.include?(guessed_letter) == false
       puts "This letter is NOT in the word!"
