@@ -45,6 +45,8 @@ var luxuryCar = new Car('Rolls Royce', 'Black', 2018);
 
 console.log(familyCar, luxuryCar, sportsCar);
 sportsCar.rev();
-
-
+console.log(Object.keys(familyCar))
+console.log(Object.keys(familyCar)[1])
+console.log(familyCar[Object.keys(familyCar)[1]])
+console.log(familyCar[Object.keys(familyCar).slice(3)])
 
