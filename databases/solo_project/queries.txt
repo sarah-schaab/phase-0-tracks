@@ -1,3 +1,4 @@
+# RELEASE 2
 1 ***Display the information in one table (either table is fine).
 
 	sqlite> SELECT * FROM stores
@@ -48,3 +49,25 @@
 5 *** Delete an item that meets some condition
 
 	sqlite> DELETE FROM employees WHERE name="Joe";
+
+
+#RELEASE 3
+1 *** https://www.w3schools.com/sql/sql_join.asp
+ 
+
+2 **** JOINS
+
+	sqlite> SELECT name, store_name FROM stores, employees
+   	...> WHERE name="Sarah";
+
+	Sarah|Sarah's Store
+	Sarah|Steven's Store
+
+	sqlite> SELECT names FROM employees RIGHT JOIN stores ON employees.name =
+	stores.store_name;
+
+	Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+	sqlite> SELECT employees.name, stores.store_name
+   	...> FROM employees
+  	 ...> INNER JOIN stores ON employees.role = stores.store_name;
