@@ -1,7 +1,23 @@
+
+
 /* Write a function that takes an array of multiple phrases or words and returns the longest word or phrase.
 ["long phrase","longest phrase","longer phrase"], => "longest phrase"
 */
 
+//instrctions
+/* write a function that takes an array of words or phrases and returns the longest word or phrase in the array.
+-So if we gave your function the array of ["long phrase","longest phrase","longer phrase"], it would return "longest phrase"
+*/
+// Pseudocode
+/* input: an array of strings
+    -if the string at index 1 behind the first string is longer,
+  output:the longest string
+*/
+
+
+
+var arr = ["long phrase","longest phrase","longer phrase"];
+arr.sort(function (a, b) { return b.length - a.length })[0];
 
 
 /* Write a function that takes two objects and checks to see if the objects share at least one key-value pair
@@ -20,3 +36,4 @@ The words should be of randomly varying length, with a minimum of 1 letter and a
 
 
 //I AM STILL WORKING ON THIS...I HAVE TRIED A BUNCH OF DIFFERENT THINGS. I AM STILL WORKING ON IT TO FIGURE IT OUT. I JUST WANTED TO SUBMIT BECAUSE I AM NOT GOING TO LEAVE IT BLANK BUT I NEED TO LEARN A BIT MORE JAVASCRIPT.
+=======
