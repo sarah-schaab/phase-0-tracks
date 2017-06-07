@@ -17,3 +17,6 @@ The words should be of randomly varying length, with a minimum of 1 letter and a
 
 
 /*Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.*/
+
+
+//I AM STILL WORKING ON THIS...I HAVE TRIED A BUNCH OF DIFFERENT THINGS. I AM STILL WORKING ON IT TO FIGURE IT OUT. I JUST WANTED TO SUBMIT BECAUSE I AM NOT GOING TO LEAVE IT BLANK BUT I NEED TO LEARN A BIT MORE JAVASCRIPT.
