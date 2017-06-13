@@ -15,3 +15,10 @@
 14. 503 Service Unavailable
 15. 550 Permission denied
 
+#What is the difference between a GET request and a POST request? When might each be used?
+
+* POST request supply additional data from the client to the server in the message body. In contrast,
+* GET requests include all required data in the URL.
+
+* Forms in HTML can use either method by specifying method="POST" or method="GET" (default) in the <form> element.
+
