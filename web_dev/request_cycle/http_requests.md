@@ -22,3 +22,7 @@
 
 * Forms in HTML can use either method by specifying method="POST" or method="GET" (default) in the <form> element.
 
+# what is a cookie and how does it relate to http requests
+* An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with the next request to the same server.
+* Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example
+
