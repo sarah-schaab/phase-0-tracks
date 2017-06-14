@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<!--
+All jQuery stuff goes in the head of the HTML document between <script></script> tags
+ *
+
+
+ -->
+  <meta charset="utf-8">
+  <title>EXPERIMENTING!</title>
+  <!-- <a href="http://jquery.com/">jQuery</a> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+  $(function() { alert('hello') }); //this is the same as below, just on one line.
+
+  window.onload = function() {
+  alert( "welcome" );
+};
+
+$( document ).ready(function() {
+  $( "#navigation" ).animate(function(){
+        left: '250px',
+        opacity: '0.5',
+        height: '150px',
+        width: '150px'
+    });
+};
+
+</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>
