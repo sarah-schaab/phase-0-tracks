@@ -46,12 +46,21 @@ get '/students/:id' do
 end
 
 #write a get route for /contact that displays an address.
-
+get '/contact' do
+"167 Diamond Street, Brooklyn, NY, 11222"
+end
 
 
 
 #write a get route for /great_job that can take a persons's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
-
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
 
 
 #A route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
