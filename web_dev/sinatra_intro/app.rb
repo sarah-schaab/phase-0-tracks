@@ -80,3 +80,15 @@ get '/students/campus/:campus' do
   end
   response
 end
+
+#Is Sinatra the only web app library in Ruby? What are some others?
+#here is a useful page full of other ruby web app library.
+#https://www.ruby-toolbox.com/categories/web_app_frameworks
+
+
+
+#Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+#it seems as though SQLite is a more uncommon database to use with Sinatra. I am seeing more of the names "Heroku" and "Active Record"
+
+#What is meant by the term web stack?
+#Web stack is the various softwares a developer uses to build things. Every developer may have a different web stack, its all based on their own preferences.
