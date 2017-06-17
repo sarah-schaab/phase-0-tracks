@@ -64,7 +64,19 @@ end
 
 
 #A route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
+get '/:num_1/plus/:num_2' do
+ result = params[:num_1].to_i + params[:num_2].to_i
+ puts "#{result} is your sum!"
+end
 
 
 
 #Optional bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present
+get '/students/campus/:campus' do
+  students = db.execute("SELECT name FROM students WHERE campus=?", [params[:campus]])
+  response = ''
+  students.each do |student|
+    response << "#{student['name']} goes to the #{[params[:campus]]} campus.<br><br>"
+  end
+  response
+end
